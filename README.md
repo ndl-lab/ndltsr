@@ -85,7 +85,7 @@ with urllib.request.urlopen(req) as res:
 * center_list：セル毎に推定した矩形座標を記述した4つの要素(x座標の最小値, y座標の最小値, x座標の最大値, y座標の最大値)を検出したセル数分持つリスト
 * logi_list：セル毎に推定したセル間の関係情報を記述した4つの要素(列の開始位置, 列の終了位置, 行の開始位置, 行の終了位置)を検出したセル数分持つリスト
 
-画像をPOSTして得た返戻と座標付きOCRテキストデータを組み合わせてHTMLやTSVを得るサンプルコードについては[merge_sample.py](merge_sample.py)をご覧ください。
+画像をPOSTして得た返戻と座標付きOCRテキストデータを組み合わせてHTMLやTSVのテーブルを得るサンプルコードについては[merge_sample.py](merge_sample.py)をご覧ください。
 
 ## ライセンス情報
 
