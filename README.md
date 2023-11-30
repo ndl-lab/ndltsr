@@ -94,6 +94,6 @@ with urllib.request.urlopen(req) as res:
 [src/lib](src/lib)以下のディレクトリ、[src/_init_paths.py](src/_init_paths.py)及び[src/main.py](src/main.py)については、原則的にLORE-TSRのオリジナルのソースコードを利用していますが、
 [src/lib/detectors/base_detector.py](src/lib/detectors/base_detector.py)及び[src/lib/opts.py](src/lib/opts.py)については、ソースコードの修正を行っています。
 
-当館が追加したソースコードについてはCC BY 4.0ライセンスで、その他の部分についてはオリジナルのLORE-TSRのライセンスに従ってください。
+当館が追加したソースコードについてはCC BY 4.0ライセンスとします。
 
 オリジナルのLORE-TSRのライセンス等の情報は[LICENSE_original.md](LICENSE_original.md)、[NOTICE_original](NOTICE_original)及び[README_original.md](README_original.md)を参照してください。
