@@ -7,8 +7,6 @@ import base64
 import re
 import logging
 import urllib
-import boto3
-import secrets
 import msgpack
 import json
 import pandas as pd
