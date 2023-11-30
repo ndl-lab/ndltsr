@@ -6,7 +6,7 @@
 
 [参考（外部リンク）：次世代デジタルライブラリーへの新機能（表の構造化）の追加及び新機能のソースコード及びデータセットの公開について](https://lab.ndl.go.jp/news/2023/2023-12-05)
 
-本プログラムにより、国立国会図書館が公開している[NDLTableSet](https://github.com/ndl-lab/ndltableset)を学習した機械学習モデルによる表構造の推論を行えるほか、独自のデータセットによる再学習を行うことが可能です。
+本プログラムにより、国立国会図書館が公開している[NDLTableSet](https://github.com/ndl-lab/ndltableset)を学習した機械学習モデルによる表構造の推論を行えるほか、[LORE-TSR](https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LORE-TSR)(外部リンク)と同様の方法により別途利用者が用意したデータセットによる再学習を行うことが可能です。
 
 **注意**
 
