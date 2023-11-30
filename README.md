@@ -54,13 +54,44 @@ sh docker/run_docker.sh
 ```
 
 ## 利用方法
+コンテナ起動後、http://127.0.0.1:8080/invocations
+に次のように画像をPOSTすることで推定された表構造の情報を得ることができます。
+```
+import urllib.request
+import msgpack
 
+data = {}
+with open("tableimg.jpg", "rb") as fp:
+    data["img"] = fp.read()
+payload = msgpack.packb(data, use_bin_type=True)
+headers = {
+    "Content-Type": "application/x-msgpack",
+}
+req = urllib.request.Request(
+        "http://127.0.0.1:8080/invocations",
+    payload, headers
+)
+
+with urllib.request.urlopen(req) as res:
+    print(res.read())
+```
+**返戻の形式**
+
+次のjson形式です。
+```
+{ "logi":logi_list,
+  "center":center_list}
+```
+* center_list：セル毎に推定した矩形座標を記述した4つの要素(x座標の最小値,y座標の最小値,x座標の最大値,y座標の最大値)を検出したセル数分持つリスト
+* logi_list：セル毎に推定したセル間の関係情報を記述した4つの要素(列の開始位置、列の終了位置、行の開始位置、行の終了位置)を検出したセル数分持つリスト
+
+画像をAPIにPOSTして得た返戻と座標付きOCRテキストデータを組み合わせて表データを得るサンプルコードについては[merge_sample.py](merge_sample.py)をご覧ください。
 
 ## ライセンス情報
 
 このリポジトリは、Apache 2.0ライセンスで公開されている[LORE-TSR](https://github.com/AlibabaResearch/AdvancedLiterateMachinery/tree/main/DocumentUnderstanding/LORE-TSR)(外部リンク)をもとに、国立国会図書館がソースコードを修正及び追加しています。
 
-[src/lib](src/lib)以下のディレクトリ、[src/_init_paths.py](src/_init_paths.py)及び[src/main.py](src/main.py)については、原則的にLORE-TSRのソースコードを利用していますが、
+[src/lib](src/lib)以下のディレクトリ、[src/_init_paths.py](src/_init_paths.py)及び[src/main.py](src/main.py)については、原則的にLORE-TSRのオリジナルのソースコードを利用していますが、
 [src/lib/detectors/base_detector.py](src/lib/detectors/base_detector.py)及び[src/lib/opts.py](src/lib/opts.py)については、ソースコードの修正を行っています。
 
 当館が追加したソースコードについてはCC BY 4.0ライセンスで、その他の部分についてはオリジナルのLORE-TSRのライセンスに従ってください。
