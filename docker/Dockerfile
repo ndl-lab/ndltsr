@@ -29,7 +29,7 @@ RUN set -x && apt -y install vim git
 
 RUN set -x && pip install tqdm opencv-python==4.5.1.48 pycocotools==2.0.6 progress==1.6 shapely==2.0.1 imgaug==0.4.0 msgpack==1.0.7 fastapi==0.104.1 uvicorn==0.23.2
 
-COPY . ${PROJECT_ROOT}
+COPY . ${PROJECT_DIR}
 
 RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/model_last.pth -P ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
 RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/processor_last.pth -P ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
