@@ -31,8 +31,8 @@ RUN set -x && pip install tqdm opencv-python==4.5.1.48 pycocotools==2.0.6 progre
 
 COPY . ${PROJECT_ROOT}
 
-RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/model_last.pth  ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
-RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/processor_last.pth  ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
+RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/model_last.pth -P ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
+RUN set -x && wget -nc https://lab.ndl.go.jp/dataset/ndltsrmodel/processor_last.pth -P ${PROJECT_DIR}/exp/ctdet_mid/train_wireless_ndl/
 
 WORKDIR ${WORK_DIR}
 
